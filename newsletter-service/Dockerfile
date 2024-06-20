@@ -17,8 +17,10 @@ COPY . .
 # Compilar o código TypeScript
 RUN npm run build
 
+RUN npx prisma generate
+
 # Expor a porta que a aplicação vai rodar
 EXPOSE 3000
 
 # Comando para rodar a aplicação
-CMD ["node", "dist/index.js"]
+CMD ["npm", "start"]
