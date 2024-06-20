@@ -1,7 +1,7 @@
 import { Usuario } from "../entities/usuario";
 import db from "../prisma";
 
-async function findUsuarioById(id: bigint){
+async function findUsuarioById(id: number){
     try {
         return await db.usuario.findUnique({where: {id}})
     } catch (error) {
@@ -25,7 +25,7 @@ async function createUsuario(usuario: Usuario){
     }
 }
 
-async function updateUsuario(id: bigint, usuario: Partial<Usuario>){
+async function updateUsuario(id: number, usuario: Partial<Usuario>){
     try{
         return await db.usuario.update({ data: usuario, where: {id}})
     } catch (error) {
@@ -33,7 +33,7 @@ async function updateUsuario(id: bigint, usuario: Partial<Usuario>){
     }
 }
 
-async function deleteUsuario(id: bigint){
+async function deleteUsuario(id: number){
     try {
         return await db.usuario.delete({where: {id}})
     } catch (error) {

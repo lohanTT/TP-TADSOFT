@@ -14,7 +14,7 @@ datasource db {
 }
 
 model usuario {
-  id BigInt @id @default(autoincrement())
+  id Int @id @default(autoincrement())
   nome String
   email String @unique
   senha String 

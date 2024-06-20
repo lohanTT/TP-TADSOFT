@@ -1,7 +1,7 @@
 import { Periodicidade } from "../types/periodicidade";
 
 export interface Usuario {
-    id?: bigint;
+    id?: number;
     nome: string;
     email: string;
     senha: string;
