@@ -1,0 +1,1 @@
+export type Periodicidade = 'semanal' | 'quinzenal' | 'mensal' | 'semestral'
