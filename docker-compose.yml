@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: newsletter_service
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - '10001:5432'
+
+  newsletter-service:
+    build:
+      context: ./newsletter-service
+    environment:
+      DATABASE_URL: postgres://postgres:password@postgres:5432/newsletter_service
+    ports:
+      - '3000:3000'
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data:
