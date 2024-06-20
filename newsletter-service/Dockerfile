@@ -17,7 +17,8 @@ COPY . .
 # Compilar o código TypeScript
 RUN npm run build
 
-RUN npx prisma generate
+# Executar as migrações do Prisma
+RUN npx prisma migrate deploy --preview-feature
 
 # Expor a porta que a aplicação vai rodar
 EXPOSE 3000

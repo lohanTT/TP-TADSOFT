@@ -3,6 +3,7 @@ import { isPartialUsuario, isUsuario } from "../../entities/usuario";
 import repository from "../../repositories/usuario.repository"
 
 async function getUsuario(req: Request, res: Response) {
+    console.log(req.params)
     const id = Number(req.params.id)
     if (id) {
         try {
