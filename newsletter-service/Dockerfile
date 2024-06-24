@@ -14,6 +14,8 @@ RUN npm install
 # Copiar o restante do código da aplicação
 COPY . .
 
+COPY .env /usr/src/app/newsletter-service/.env
+
 # Compilar o código TypeScript
 RUN npm run build
 

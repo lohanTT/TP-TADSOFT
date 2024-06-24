@@ -14,6 +14,21 @@ Cada aplicação terá sua própria pasta, com seus próprios arquivos e scripts
 
 Em cada pasta, quando em ambiente de desenvolvimento, deve conter um arquivo `.env` preenchido conforme sugerem os arquivos `.env.example` para que cada aplicação possa passar pelo processo de **Build**
 
+# Primeiros passos
+Ainda há algumas pendências com o depoly com o uso de docker-compose. Portanto, em primeiro momento:
+
+- no diretório da aplicação ```/ ```:
+```
+docker-compose postgres -d
+```
+- no diretório da aplicação ```/newsletter-service```:
+```
+npm i
+npx prisma generate
+npm run dev
+
+```
+
 ## Scripts comuns
 
 **Build:** comando para que ocorra o build da aplicação

@@ -19,7 +19,15 @@ async function findAllUsuario(){
 
 async function createUsuario(usuario: Usuario){
     try {
-        return await db.usuario.create({data: usuario})
+        return await db.usuario.create({
+            select: {
+                id: true,
+                nome: true,
+                email: true,
+                periodicidade: true
+            },
+            data: usuario
+        })
     } catch (error) {
         throw error
     }
