@@ -26,7 +26,10 @@ docker-compose postgres -d
 npm i
 npx prisma generate
 npm run dev
-
+```
+- swagger:
+```
+localhos:3000/api-docs
 ```
 
 ## Scripts comuns
